@@ -1,0 +1,19 @@
+{
+   "name": "mongo-redis-practice",
+   "version": "1.0.0",
+   "description": "A practice project for MongoDB and Redis integration",
+   "main": "index.js",
+   "private": true,
+   "type": "module",
+   "scripts": {
+      "dev": "nodemon src/index.js"
+   },
+   "dependencies": {
+      "express": "^5.3.0",
+      "ioredis": "^5.4.1",
+      "mongoose": "^8.2.1"
+   },
+   "devDependencies": {
+      "nodemon": "^3.1.14"
+   }
+}

@@ -1,0 +1,21 @@
+import express from 'express';
+import redis from './connections/redis.js';
+import { connectMongo } from './connections/mongo.js';
+import bannerRouter from './bannerRedis.js';
+
+const app = express();
+app.use(express.json());
+
+app.get('/redis', async (req, res) => {
+  const reply = await redis.ping();
+  res.json({ redis: reply });
+});
+
+app.get('/mongo', async (req, res) => {
+  const connection = await connectMongo();
+  res.json({ mongo: 'connected', database: connection.db.databaseName });
+});
+
+app.use(bannerRouter);
+
+export default app;

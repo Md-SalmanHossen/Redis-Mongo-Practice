@@ -2,6 +2,7 @@ import express from 'express';
 import redis from './connections/redis.js';
 import { connectMongo } from './connections/mongo.js';
 import bannerRouter from './bannerRedis.js';
+import otpRouter from './otpRedis.js';
 
 const app = express();
 app.use(express.json());
@@ -17,5 +18,6 @@ app.get('/mongo', async (req, res) => {
 });
 
 app.use(bannerRouter);
+app.use(otpRouter);
 
 export default app;

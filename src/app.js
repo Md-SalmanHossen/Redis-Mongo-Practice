@@ -4,6 +4,8 @@ import { connectMongo } from './connections/mongo.js';
 import bannerRouter from './bannerRedis.js';
 import otpRouter from './otpRedis.js';
 import profileRouter from './redis_json_vs_hash.js';
+import queueRouter from './email_queue.js';
+import bullmqRouter from './bullmq/api.js';
 
 
 const app = express();
@@ -22,5 +24,7 @@ app.get('/mongo', async (req, res) => {
 app.use(bannerRouter);
 app.use(otpRouter);
 app.use(profileRouter);
+app.use(queueRouter);
+app.use(bullmqRouter);
 
 export default app;

@@ -6,6 +6,7 @@ import otpRouter from './otpRedis.js';
 import profileRouter from './redis_json_vs_hash.js';
 import queueRouter from './email_queue.js';
 import bullmqRouter from './bullmq/api.js';
+import pubSubRouter from './pub_sub/api.js';
 
 
 const app = express();
@@ -26,5 +27,6 @@ app.use(otpRouter);
 app.use(profileRouter);
 app.use(queueRouter);
 app.use(bullmqRouter);
+app.use(pubSubRouter);
 
 export default app;
